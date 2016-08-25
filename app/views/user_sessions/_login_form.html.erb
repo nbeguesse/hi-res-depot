@@ -4,7 +4,7 @@
 
     <%
       #url causes missing-host errors sometimes!
-      url = user_sessions_url(:secure => secure?) #rescue "https://#{Settings.host}/user_sessions"
+      url = user_sessions_url(:secure => secure?)
     %>
     <%= form_for @user_session, :url => url do |f| %>
         <% if @user_session.errors.present? %>
