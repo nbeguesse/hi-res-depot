@@ -17,12 +17,27 @@ module ImagesHelper
   end
 
   def media
-    ["90s anime","manga","bookmark"]
+    ["90s anime","Manga","Bookmark","Laser Disc","CD","Calendar"]
   end
 
-  def other_tags
+  def all_tags
     ActsAsTaggableOn::Tag.most_used(50)
   end
 
+  def num_girls
+    ["Alone"]+(2..10).map{|i| pluralize(i, "Girl")}
+  end
+
+  def other_heroes
+    ["Tux","Luna","Artemis"]
+  end
+
+  def base_tags_for_edit
+    (sailors+girls+seasons+media+other_heroes+num_girls)
+  end
+
+  def base_tags_for_index
+    (sailors+seasons+media)
+  end
 
 end

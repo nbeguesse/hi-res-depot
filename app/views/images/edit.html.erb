@@ -43,6 +43,49 @@
           <%end%>
         </td>
       </tr>
+      <tr>
+        <th>
+          How Many
+        </th>
+        <td>  
+          <%num_girls.each do |tag|%>
+            <%=toggle_tag tag.titlecase%>
+          <%end%>
+
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Other Heroes
+        </th>
+        <td>          
+          <%other_heroes.each do |tag|%>
+            <%=toggle_tag tag.titlecase%>
+          <%end%>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Other Tags
+        </th>
+        <td>          
+          <%@tags.each do |tag|%>
+            <%next if base_tags_for_edit.downcase.include?(tag.downcase)%>
+            <%=toggle_tag tag.titlecase%>
+          <%end%>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Add a tag
+        </th>
+        <td>          
+          <%=form_tag add_tag_image_path(@image)%>
+            <input type="text" name="tag">
+            <input type="submit">
+          </form>
+        </td>
+      </tr>
     </table>
 </div>
 <div class="dark">

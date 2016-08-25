@@ -1,9 +1,18 @@
 class ImagesController < ApplicationController
-  before_action :set_image, only: [:show, :edit, :update, :destroy, :toggle_tag]
+  before_action :set_image, only: [:show, :edit, :update, :destroy, :toggle_tag, :add_tag]
   before_action :set_bg_image, only: [:index, :new]
   before_action :get_bg_image, except: [:index, :new]
-  before_filter :require_user, :only=>[:new, :create, :update, :edit]
-  before_filter :require_mgt, :only=>[:new, :create, :update, :edit]
+  before_filter :require_user, :except=>[:show, :index]
+  before_filter :require_mgt, :except=>[:show, :index]
+
+  def add_tag
+    tag = params[:tag].try(:downcase)
+    if tag.present?
+      @image.tag_list.add(tag)
+      @image.save
+    end
+    redirect_to edit_image_path(@image)
+  end
   
   # GET /images
   def index
@@ -34,9 +43,9 @@ class ImagesController < ApplicationController
     @image = Image.new(image_params)
 
     if @image.save
-      redirect_to @image, notice: 'Image was successfully created.'
+      redirect_to edit_image_path(@image), notice: 'Image was successfully created.'
     else
-      render :edit
+      render :new
     end
   end
 

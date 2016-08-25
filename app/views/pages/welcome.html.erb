@@ -13,7 +13,8 @@
 <%end%>
 <div><h2 class="light">Tags</h2></div>
 <div class="dark tag-cloud">
-    <%other_tags.each do |tag|%>
+    <%all_tags.each do |tag|%>
+      <%next if base_tags_for_index.downcase.include?(tag.to_s.downcase)%>
       <%=link_to tag, images_path(:tag=>tag)%>
     <%end%>
 </div>

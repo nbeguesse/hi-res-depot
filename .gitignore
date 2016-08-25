@@ -1,15 +1,13 @@
 .DS_Store
 *.log
 log/*.log
+log/development.log
 log/*
 .log
 tmp/*
 .idea
 *.iml
-public/avatars
-public/anim
-public/posts
-public/palettes
+public/images
 db/sphinx/*
 config/*.sphinx.conf
 config/database.yml

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
    resources :images do
     member do
       get 'toggle_tag'
-      get 'add_tag'
+      post 'add_tag'
     end
    end
 
