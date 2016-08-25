@@ -1,0 +1,51 @@
+<h1>Editing Image</h1>
+<div class="edit-image">
+    <%=link_to image_tag(@image.file.url(:thumb)), @image%>
+    <h3>Add some tags</h3>
+    <table class="tag-cloud dark editable">
+      <tr>
+        <th>
+          Sailor
+        </th>
+        <td>
+          <%sailors.each do |tag| %>
+            <%=toggle_tag tag%>
+          <%end%>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Character
+        </th>
+        <td>          
+          <%girls.each do |tag| %>
+            <%=toggle_tag tag%>
+          <%end%>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Season
+        </th>
+          <td>          
+          <%seasons.each do |tag| %>
+            <%=toggle_tag tag%>
+          <%end%>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Style
+        </th>
+        <td>          
+          <%media.each do |tag| %>
+            <%=toggle_tag tag.titlecase%>
+          <%end%>
+        </td>
+      </tr>
+    </table>
+</div>
+<div class="dark">
+<%= link_to 'Add Another Image', new_image_path %> |
+<%= link_to 'Home', root_url %>
+</div>

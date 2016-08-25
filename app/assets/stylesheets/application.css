@@ -1,0 +1,99 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+html { 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body {
+  background-color:transparent;
+  text-align: center;
+  padding-bottom:20px;
+}
+h1 {
+  color: white;
+  text-shadow: 0 0 10px black;
+
+}
+table {
+  margin: 0 auto;
+}
+input[type=file]{
+  display:inline-block;
+  background-color:white;
+}
+th{
+    font-size:18px;
+    font-weight: normal;
+    padding:10px 5px;
+    text-shadow: 0 0 2px black;
+    color:white;
+}
+a, a:visited, a:active, a:hover {
+  color:white;
+  text-decoration: underline;
+  text-shadow: 0 0 2px black;
+  padding:5px;
+  border-radius:5px;
+}
+a:hover {  }
+.tag-cloud a:hover, a.hoverable:hover {
+  color: #fff; 
+  background-color:#ffdddd;
+}
+.tag-cloud a.tagged{
+  text-shadow:none;
+  background-color:darkblue;
+}
+.tag-cloud td {
+  border-bottom: 2px solid gray;
+}
+.tag-cloud tr:last-child td {
+  border-bottom: 0;
+}
+.dark {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius:5px;
+  padding:5px;
+  display:inline-block;
+}
+.light {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius:5px;
+  padding:5px;
+  display:inline-block;
+}
+a img {
+  border-radius:5px;
+}
+
+.gallery img {
+  margin:10px;
+}
+.black {
+  color:black;
+  text-shadow: 0 0 2px white;
+}
+.form-holder {
+  text-align: center;
+  max-width:500px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius:5px;
+  padding:5px;
+  display:inline-block;
+}

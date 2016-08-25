@@ -1,0 +1,22 @@
+
+<% @user_session ||= UserSession.new%>
+<% @user_session.remember_me = true%>
+
+    <%
+      #url causes missing-host errors sometimes!
+      url = user_sessions_url(:secure => secure?) #rescue "https://#{Settings.host}/user_sessions"
+    %>
+    <%= form_for @user_session, :url => url do |f| %>
+        <% if @user_session.errors.present? %>
+            <div style="color: red;">Incorrect email or password. Please try again.</div>
+        <% end %>
+        <%= f.label :email %>
+        <%= f.text_field :email, :size => nil, :style => 'width: 210px;' %><br/>
+        <%= f.label :password %>
+        <%= f.password_field :password, :size => nil, :style => 'width: 210px;' %>
+        <%= f.hidden_field :remember_me, :value=>true%>
+        <div style="text-align:center;">
+          <input type="submit" class="button sqs-system-button sqs-editable-button" value="Login">
+        </div>
+      <%end%>
+

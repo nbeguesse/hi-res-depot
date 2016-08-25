@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<%= link_to image_tag(@image.file.url(:thumb)), @image.file.url %><br/>
+<div class="black">(Click to View Big)</div><br/>
+<table class="tag-cloud dark">
+    <tr>
+        <th>View More:</th>
+        <td><%@image.tag_list.each do |tag|%>
+            <%=link_to tag.titlecase, images_path(:tag=>tag)%>
+            <%end%>
+        </td>
+    </tr>
+</table><br/>
+<div>
+    <div class="dark">
+    <%= link_to 'Home', root_url %>
+    </div>
+</div>
