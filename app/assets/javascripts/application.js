@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require dropzone
 
 $(document).ready(function() {
     console.log('ready')
@@ -24,4 +25,13 @@ $(document).ready(function() {
         $(this).toggleClass("tagged");
         return false;
     });
+
+
+    Dropzone.options.myAwesomeDropzone = {
+      init: function() {
+        this.on("success", function(file, response) { 
+            top.location.href = response.redirect_to;
+         });
+      }
+    };    
 });

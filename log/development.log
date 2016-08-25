@@ -1,0 +1,667 @@
+
+
+Started GET "/" for ::1 at 2016-08-25 15:00:53 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#welcome as HTML
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT  "tags".* FROM "tags"  ORDER BY taggings_count desc LIMIT 50
+  Rendered pages/welcome.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 433ms (Views: 429.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/dropzone.self-196e22c609cd0ea17f6e3e241edfd2b54697dcc033446d2898d80bfec879da86.css?body=1" for ::1 at 2016-08-25 15:00:54 -0400
+
+
+Started GET "/assets/dropzone.self-b90bb2a8140b551a333eb43c46bd248a2252800a5815afc2dcbebc37c7dcde32.js?body=1" for ::1 at 2016-08-25 15:00:54 -0400
+
+
+Started GET "/images/new" for ::1 at 2016-08-25 15:01:00 -0400
+Processing by ImagesController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["last_request_at", "2016-08-25 19:01:00.466350"], ["perishable_token", "l8iT7lt4oTrnctj2WiS"], ["updated_at", "2016-08-25 19:01:00.467269"], ["id", 1]]
+  [1m[35m (12.2ms)[0m  COMMIT
+  Rendered images/new.html.erb within layouts/application (32.3ms)
+Completed 500 Internal Server Error in 192ms (ActiveRecord: 15.6ms)
+
+ActionView::Template::Error (Asset was not declared to be precompiled in production.
+Add `Rails.application.config.assets.precompile += %w( dropzone.js )` to `config/initializers/assets.rb` and restart your server):
+    1: <h1>New Image</h1>
+    2: <%=javascript_include_tag "dropzone"%>
+    3: <%=stylesheet_link_tag "dropzone"%>
+    4: <%= render 'form' %>
+    5: <div class="dark">
+  app/views/images/new.html.erb:2:in `_app_views_images_new_html_erb___99389163432101741_70185785639760'
+
+
+  Rendered /Users/nicolebeguesse/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.8ms)
+  Rendered /Users/nicolebeguesse/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/nicolebeguesse/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/nicolebeguesse/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (47.2ms)
+
+
+Started GET "/images/new" for ::1 at 2016-08-25 15:01:51 -0400
+Processing by ImagesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["last_request_at", "2016-08-25 19:01:51.234771"], ["perishable_token", "7G4j0hF6zoabfuvwVADO"], ["updated_at", "2016-08-25 19:01:51.235460"], ["id", 1]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  Rendered images/_form.html.erb (15.6ms)
+  Rendered images/new.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 124ms (Views: 117.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.self-27ca6efc1987b2fa359680fa5cb7a4f7279d5876e65cd4a6e4e4a7b132e17f24.css?body=1" for ::1 at 2016-08-25 15:01:51 -0400
+
+
+Started GET "/assets/application.self-41a48c6fbd8a63b437f56bfc283f006a58147a5f740512fa4e299d8a21ba44f0.js?body=1" for ::1 at 2016-08-25 15:01:51 -0400
+
+
+Started GET "/images/new" for ::1 at 2016-08-25 15:03:22 -0400
+Processing by ImagesController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["last_request_at", "2016-08-25 19:03:22.128591"], ["perishable_token", "wN23chaQKvKW8dr9jR7i"], ["updated_at", "2016-08-25 19:03:22.129534"], ["id", 1]]
+  [1m[35m (1.5ms)[0m  COMMIT
+  Rendered images/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 26ms (Views: 17.1ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/images" for ::1 at 2016-08-25 15:03:45 -0400
+Processing by ImagesController#create as JSON
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x007faacda52768 @tempfile=#<Tempfile:/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/RackMultipart20160825-39516-1g0ladp.jpeg>, @original_filename="image.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"image.jpeg\"\r\nContent-Type: image/jpeg\r\n">}
+Can't verify CSRF token authenticity
+Redirected to http://localhost:3000/users/new
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2016-08-25 15:03:45 -0400
+Processing by UsersController#new as JSON
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+ActionView::MissingTemplate (Missing template users/new, application/new with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee]}. Searched in:
+  * "/Users/nicolebeguesse/Desktop/hi-res/app/views"
+):
+  actionview (4.2.4) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.4) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.4) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.4) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.4) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.4) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.4) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.4) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.4) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/nicolebeguesse/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `call'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  request_store (1.3.1) lib/request_store/middleware.rb:9:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/nicolebeguesse/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/nicolebeguesse/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/nicolebeguesse/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/nicolebeguesse/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/missing_template.text.erb (1.0ms)
+
+
+Started GET "/images/new" for ::1 at 2016-08-25 15:05:08 -0400
+Processing by ImagesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["last_request_at", "2016-08-25 19:05:08.345775"], ["perishable_token", "30aYAMM5aimXT0cPHWQv"], ["updated_at", "2016-08-25 19:05:08.346775"], ["id", 1]]
+  [1m[35m (6.1ms)[0m  COMMIT
+  Rendered images/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 53ms (Views: 13.6ms | ActiveRecord: 9.4ms)
+
+
+Started POST "/images" for ::1 at 2016-08-25 15:05:12 -0400
+Processing by ImagesController#create as JSON
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x007faad20ef7e8 @tempfile=#<Tempfile:/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/RackMultipart20160825-39516-1ku7yt8.jpeg>, @original_filename="image.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"image.jpeg\"\r\nContent-Type: image/jpeg\r\n">}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["last_request_at", "2016-08-25 19:05:12.727402"], ["perishable_token", "U7A0fMLphqbjTMwsacxx"], ["updated_at", "2016-08-25 19:05:12.728407"], ["id", 1]]
+  [1m[35m (1.2ms)[0m  COMMIT
+Command :: file -b --mime '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-f5gktr.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-1mxlc29.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-1mxlc29.jpeg[0]'
+Command :: convert '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-1mxlc29.jpeg[0]' -auto-orient -resize "200x200>" '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/fc3483f4a83644d99354a5a7ac84587d20160825-39516-ai70x6'
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-1gws9ax.jpeg'
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "images" ("file_file_name", "file_content_type", "file_file_size", "file_updated_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["file_file_name", "image.jpeg"], ["file_content_type", "image/jpeg"], ["file_file_size", 121212], ["file_updated_at", "2016-08-25 19:05:12.733634"], ["created_at", "2016-08-25 19:05:12.873736"], ["updated_at", "2016-08-25 19:05:12.873736"]]
+  [1m[36mActsAsTaggableOn::Tagging Load (1.1ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 6], ["taggable_type", "Image"]]
+  [1m[35m (6.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/images/6/edit
+Completed 302 Found in 196ms (ActiveRecord: 11.6ms)
+
+
+Started GET "/images/6/edit" for ::1 at 2016-08-25 15:05:12 -0400
+Processing by ImagesController#edit as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4  [["last_request_at", "2016-08-25 19:05:12.938733"], ["perishable_token", "H4oZDKm6HB2jijYOrbEt"], ["updated_at", "2016-08-25 19:05:12.940879"], ["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActsAsTaggableOn::Tagging Load (0.3ms)[0m  SELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2  [["taggable_id", 6], ["taggable_type", "Image"]]
+  [1m[36mActsAsTaggableOn::Tag Load (2.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 6], ["taggable_type", "Image"]]
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 4.5ms)
+
+ActionView::MissingTemplate (Missing template images/edit, application/edit with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee]}. Searched in:
+  * "/Users/nicolebeguesse/Desktop/hi-res/app/views"
+):
+  actionview (4.2.4) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.4) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.4) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.4) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.4) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.4) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.4) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.4) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.4) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/nicolebeguesse/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `call'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  request_store (1.3.1) lib/request_store/middleware.rb:9:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/nicolebeguesse/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/nicolebeguesse/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/nicolebeguesse/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/nicolebeguesse/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/missing_template.text.erb (0.4ms)
+
+
+Started GET "/images/new" for ::1 at 2016-08-25 15:06:02 -0400
+Processing by ImagesController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4  [["last_request_at", "2016-08-25 19:06:02.329541"], ["perishable_token", "6pVOQKeTRi0UyZwmLCC4"], ["updated_at", "2016-08-25 19:06:02.330202"], ["id", 1]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+  Rendered images/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 21ms (Views: 13.9ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/images" for ::1 at 2016-08-25 15:06:08 -0400
+Processing by ImagesController#create as JSON
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x007faad3829800 @tempfile=#<Tempfile:/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/RackMultipart20160825-39516-155f1yb.jpeg>, @original_filename="image.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"image.jpeg\"\r\nContent-Type: image/jpeg\r\n">}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4  [["last_request_at", "2016-08-25 19:06:08.039963"], ["perishable_token", "gw1VnTHGxUubTCbbNpCU"], ["updated_at", "2016-08-25 19:06:08.040761"], ["id", 1]]
+  [1m[36m (1.5ms)[0m  [1mCOMMIT[0m
+Command :: file -b --mime '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-5h77lv.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-1w1q1qg.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-1w1q1qg.jpeg[0]'
+Command :: convert '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-1w1q1qg.jpeg[0]' -auto-orient -resize "200x200>" '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/5437d10792cadd53bcf6d2ae5830da8220160825-39516-ywx8yy'
+  [1m[35m (0.2ms)[0m  BEGIN
+Command :: file -b --mime '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-1a293p9.jpeg'
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "images" ("file_file_name", "file_content_type", "file_file_size", "file_updated_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["file_file_name", "image.jpeg"], ["file_content_type", "image/jpeg"], ["file_file_size", 121212], ["file_updated_at", "2016-08-25 19:06:08.045481"], ["created_at", "2016-08-25 19:06:08.147075"], ["updated_at", "2016-08-25 19:06:08.147075"]]
+  [1m[35mActsAsTaggableOn::Tagging Load (0.3ms)[0m  SELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2  [["taggable_id", 7], ["taggable_type", "Image"]]
+  [1m[36m (6.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/images/7/edit
+Completed 302 Found in 126ms (ActiveRecord: 9.3ms)
+
+
+Started GET "/images/7/edit" for ::1 at 2016-08-25 15:06:08 -0400
+Processing by ImagesController#edit as JSON
+  Parameters: {"id"=>"7"}
+  [1m[35mImage Load (0.3ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["last_request_at", "2016-08-25 19:06:08.179030"], ["perishable_token", "7y8T3NZsh6vLmGohJLf"], ["updated_at", "2016-08-25 19:06:08.179915"], ["id", 1]]
+  [1m[35m (5.7ms)[0m  COMMIT
+  [1m[36mActsAsTaggableOn::Tagging Load (0.3ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 7], ["taggable_type", "Image"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)  [["taggable_id", 7], ["taggable_type", "Image"]]
+  Rendered images/edit.erb (10.8ms)
+Completed 200 OK in 31ms (Views: 13.7ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/images/new" for ::1 at 2016-08-25 15:07:16 -0400
+Processing by ImagesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["last_request_at", "2016-08-25 19:07:16.784558"], ["perishable_token", "xkUyW5MTTY8w1ageWWme"], ["updated_at", "2016-08-25 19:07:16.785316"], ["id", 1]]
+  [1m[35m (6.4ms)[0m  COMMIT
+  Rendered images/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 43ms (Views: 31.1ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/assets/application.self-b8f62c9e21ed496cd7081b5d136ae6aff463e12d3f7dfa87390d3c9a83b7b25b.css?body=1" for ::1 at 2016-08-25 15:07:17 -0400
+
+
+Started GET "/images/new" for ::1 at 2016-08-25 15:07:27 -0400
+Processing by ImagesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["last_request_at", "2016-08-25 19:07:27.250686"], ["perishable_token", "Ux5zckv18gorigfiY69"], ["updated_at", "2016-08-25 19:07:27.251406"], ["id", 1]]
+  [1m[35m (8.7ms)[0m  COMMIT
+  Rendered images/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 46ms (Views: 31.9ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/assets/application.self-53b193eabd9f82adaecde24777aa2b5884cc8d9e82430889822c2b36835e4e87.css?body=1" for ::1 at 2016-08-25 15:07:27 -0400
+
+
+Started GET "/images/new" for ::1 at 2016-08-25 15:08:52 -0400
+Processing by ImagesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["last_request_at", "2016-08-25 19:08:52.136540"], ["perishable_token", "gcvGrnJhNjZ6VPfmEA"], ["updated_at", "2016-08-25 19:08:52.137274"], ["id", 1]]
+  [1m[35m (6.2ms)[0m  COMMIT
+  Rendered images/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 33ms (Views: 21.1ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/images/new" for ::1 at 2016-08-25 15:09:08 -0400
+Processing by ImagesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["last_request_at", "2016-08-25 19:09:08.132277"], ["perishable_token", "VrttdhRFbliTZa1qbQ"], ["updated_at", "2016-08-25 19:09:08.133189"], ["id", 1]]
+  [1m[35m (1.4ms)[0m  COMMIT
+  Rendered images/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 23ms (Views: 16.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/images/new" for ::1 at 2016-08-25 15:11:56 -0400
+Processing by ImagesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (5.6ms)[0m  [1mUPDATE "users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["last_request_at", "2016-08-25 19:11:56.605759"], ["perishable_token", "886BP3WNbVRTSQ0rBkFR"], ["updated_at", "2016-08-25 19:11:56.607215"], ["id", 1]]
+  [1m[35m (6.2ms)[0m  COMMIT
+  Rendered images/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 118ms (Views: 97.6ms | ActiveRecord: 12.3ms)
+
+
+Started GET "/assets/application.self-738608772404cae2fdfc8da625c5abee1d0eed9dd642649e9c9aee51f60a695d.js?body=1" for ::1 at 2016-08-25 15:11:56 -0400
+
+
+Started POST "/images" for ::1 at 2016-08-25 15:12:02 -0400
+Processing by ImagesController#create as JSON
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x007faad3b526d0 @tempfile=#<Tempfile:/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/RackMultipart20160825-39516-1bty5xj.jpeg>, @original_filename="image.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"image.jpeg\"\r\nContent-Type: image/jpeg\r\n">}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["last_request_at", "2016-08-25 19:12:02.107187"], ["perishable_token", "p5lloYfUB7SJiNsidlF"], ["updated_at", "2016-08-25 19:12:02.108342"], ["id", 1]]
+  [1m[35m (5.0ms)[0m  COMMIT
+Command :: file -b --mime '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-1pgvytn.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-x0za24.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-x0za24.jpeg[0]'
+Command :: convert '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-x0za24.jpeg[0]' -auto-orient -resize "200x200>" '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/bdb96cbbe27ef5bd9398e4f59338bffe20160825-39516-1qczazt'
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-1jw1v2e.jpeg'
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "images" ("file_file_name", "file_content_type", "file_file_size", "file_updated_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["file_file_name", "image.jpeg"], ["file_content_type", "image/jpeg"], ["file_file_size", 121212], ["file_updated_at", "2016-08-25 19:12:02.117742"], ["created_at", "2016-08-25 19:12:02.266202"], ["updated_at", "2016-08-25 19:12:02.266202"]]
+  [1m[36mActsAsTaggableOn::Tagging Load (0.3ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 8], ["taggable_type", "Image"]]
+  [1m[35m (6.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/images/8/edit
+Completed 302 Found in 177ms (ActiveRecord: 13.8ms)
+
+
+Started GET "/images/8/edit" for ::1 at 2016-08-25 15:12:02 -0400
+Processing by ImagesController#edit as JSON
+  Parameters: {"id"=>"8"}
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4  [["last_request_at", "2016-08-25 19:12:02.295885"], ["perishable_token", "KF3k1teHTlFp2Fyl4UG"], ["updated_at", "2016-08-25 19:12:02.296562"], ["id", 1]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mActsAsTaggableOn::Tagging Load (0.4ms)[0m  SELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2  [["taggable_id", 8], ["taggable_type", "Image"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 8], ["taggable_type", "Image"]]
+  Rendered images/edit.erb (10.1ms)
+Completed 200 OK in 28ms (Views: 12.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/images/new" for ::1 at 2016-08-25 15:13:08 -0400
+Processing by ImagesController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4  [["last_request_at", "2016-08-25 19:13:08.246876"], ["perishable_token", "hKKulbQqC9WTCkatU7aV"], ["updated_at", "2016-08-25 19:13:08.247656"], ["id", 1]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  Rendered images/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 100ms (Views: 93.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/application.self-6449afe76ba5d0abaa9c70ea9bb17763db5a0e16222825c34e0407c49a472834.js?body=1" for ::1 at 2016-08-25 15:13:08 -0400
+
+
+Started POST "/images" for ::1 at 2016-08-25 15:13:13 -0400
+Processing by ImagesController#create as JSON
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x007faad3a287c8 @tempfile=#<Tempfile:/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/RackMultipart20160825-39516-1p9ul1g.jpeg>, @original_filename="image.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"image.jpeg\"\r\nContent-Type: image/jpeg\r\n">}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4  [["last_request_at", "2016-08-25 19:13:13.100963"], ["perishable_token", "KWZSxZhgcKLaU64Gjexe"], ["updated_at", "2016-08-25 19:13:13.101968"], ["id", 1]]
+  [1m[36m (2.5ms)[0m  [1mCOMMIT[0m
+Command :: file -b --mime '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-17krdw4.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-1y4cnjo.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-1y4cnjo.jpeg[0]'
+Command :: convert '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-1y4cnjo.jpeg[0]' -auto-orient -resize "200x200>" '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/fbfa0a78d5e08cae35331c7ceb1e19c020160825-39516-163v4af'
+  [1m[35m (0.2ms)[0m  BEGIN
+Command :: file -b --mime '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-spur0g.jpeg'
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "images" ("file_file_name", "file_content_type", "file_file_size", "file_updated_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["file_file_name", "image.jpeg"], ["file_content_type", "image/jpeg"], ["file_file_size", 121212], ["file_updated_at", "2016-08-25 19:13:13.108796"], ["created_at", "2016-08-25 19:13:13.211314"], ["updated_at", "2016-08-25 19:13:13.211314"]]
+  [1m[35mActsAsTaggableOn::Tagging Load (0.2ms)[0m  SELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2  [["taggable_id", 9], ["taggable_type", "Image"]]
+  [1m[36m (5.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/images/9/edit
+Completed 302 Found in 127ms (ActiveRecord: 10.0ms)
+
+
+Started GET "/images/9/edit" for ::1 at 2016-08-25 15:13:13 -0400
+Processing by ImagesController#edit as JSON
+  Parameters: {"id"=>"9"}
+  [1m[35mImage Load (0.3ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["last_request_at", "2016-08-25 19:13:13.237415"], ["perishable_token", "vDLU6I47dzujhvflOA"], ["updated_at", "2016-08-25 19:13:13.239281"], ["id", 1]]
+  [1m[35m (5.1ms)[0m  COMMIT
+  [1m[36mActsAsTaggableOn::Tagging Load (0.3ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 9], ["taggable_type", "Image"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)  [["taggable_id", 9], ["taggable_type", "Image"]]
+  Rendered images/edit.erb (10.9ms)
+Completed 200 OK in 32ms (Views: 14.0ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/images/new" for ::1 at 2016-08-25 15:14:04 -0400
+Processing by ImagesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["last_request_at", "2016-08-25 19:14:04.384792"], ["perishable_token", "6JZd7ZsueEzaWWDBjV"], ["updated_at", "2016-08-25 19:14:04.385666"], ["id", 1]]
+  [1m[35m (5.2ms)[0m  COMMIT
+  Rendered images/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 64ms (Views: 18.8ms | ActiveRecord: 8.3ms)
+
+
+Started POST "/images" for ::1 at 2016-08-25 15:14:07 -0400
+Processing by ImagesController#create as JSON
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x007faacfbacf08 @tempfile=#<Tempfile:/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/RackMultipart20160825-39516-1voix08.jpeg>, @original_filename="image.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"image.jpeg\"\r\nContent-Type: image/jpeg\r\n">}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["last_request_at", "2016-08-25 19:14:07.163726"], ["perishable_token", "vhylRxERK62reQ4lrkvm"], ["updated_at", "2016-08-25 19:14:07.164959"], ["id", 1]]
+  [1m[35m (1.2ms)[0m  COMMIT
+Command :: file -b --mime '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-1uv196d.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-pflgew.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-pflgew.jpeg[0]'
+Command :: convert '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-pflgew.jpeg[0]' -auto-orient -resize "200x200>" '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/767a3ec9f613d42795769768688f051320160825-39516-uttygo'
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-1e6y6zz.jpeg'
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "images" ("file_file_name", "file_content_type", "file_file_size", "file_updated_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["file_file_name", "image.jpeg"], ["file_content_type", "image/jpeg"], ["file_file_size", 121212], ["file_updated_at", "2016-08-25 19:14:07.173315"], ["created_at", "2016-08-25 19:14:07.276171"], ["updated_at", "2016-08-25 19:14:07.276171"]]
+  [1m[36mActsAsTaggableOn::Tagging Load (0.3ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 10], ["taggable_type", "Image"]]
+  [1m[35m (5.9ms)[0m  COMMIT
+Completed 200 OK in 134ms (Views: 0.4ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/images/new" for ::1 at 2016-08-25 15:14:40 -0400
+Processing by ImagesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["last_request_at", "2016-08-25 19:14:40.448537"], ["perishable_token", "R94ER0GU5UdPBHi9k77"], ["updated_at", "2016-08-25 19:14:40.449587"], ["id", 1]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  Rendered images/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 96ms (Views: 88.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.self-e0a90bcd134f3784c4428a409d25c4eb22e630baacb14181ddd5c8037c90b18a.js?body=1" for ::1 at 2016-08-25 15:14:40 -0400
+
+
+Started POST "/images" for ::1 at 2016-08-25 15:14:43 -0400
+Processing by ImagesController#create as JSON
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x007faad3bf21f8 @tempfile=#<Tempfile:/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/RackMultipart20160825-39516-1vtr11w.jpeg>, @original_filename="image.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"image.jpeg\"\r\nContent-Type: image/jpeg\r\n">}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["last_request_at", "2016-08-25 19:14:43.735071"], ["perishable_token", "yjlXPjRiRjgHcecf0u"], ["updated_at", "2016-08-25 19:14:43.736190"], ["id", 1]]
+  [1m[35m (1.5ms)[0m  COMMIT
+Command :: file -b --mime '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-fzkqry.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-yga9ak.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-yga9ak.jpeg[0]'
+Command :: convert '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-yga9ak.jpeg[0]' -auto-orient -resize "200x200>" '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/4ff798dfabdcec050c124467c9dc31ec20160825-39516-1w1jgt7'
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-u2e2zp.jpeg'
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "images" ("file_file_name", "file_content_type", "file_file_size", "file_updated_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["file_file_name", "image.jpeg"], ["file_content_type", "image/jpeg"], ["file_file_size", 121212], ["file_updated_at", "2016-08-25 19:14:43.740894"], ["created_at", "2016-08-25 19:14:43.840028"], ["updated_at", "2016-08-25 19:14:43.840028"]]
+  [1m[36mActsAsTaggableOn::Tagging Load (0.5ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 11], ["taggable_type", "Image"]]
+  [1m[35m (6.3ms)[0m  COMMIT
+Completed 200 OK in 123ms (Views: 0.3ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/images/11/edit" for ::1 at 2016-08-25 15:14:43 -0400
+Processing by ImagesController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = $1 LIMIT 1[0m  [["id", 11]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4  [["last_request_at", "2016-08-25 19:14:43.878522"], ["perishable_token", "ZP2QrKQFohDhfq8HcsPF"], ["updated_at", "2016-08-25 19:14:43.879330"], ["id", 1]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mActsAsTaggableOn::Tagging Load (0.2ms)[0m  SELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2  [["taggable_id", 11], ["taggable_type", "Image"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 11], ["taggable_type", "Image"]]
+  Rendered images/edit.erb within layouts/application (25.6ms)
+Completed 200 OK in 60ms (Views: 47.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/images/11/edit" for ::1 at 2016-08-25 15:15:43 -0400
+Processing by ImagesController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mImage Load (0.3ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = $1 LIMIT 1  [["id", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["last_request_at", "2016-08-25 19:15:43.594341"], ["perishable_token", "IHsGNMq7xlchQovPIpZ"], ["updated_at", "2016-08-25 19:15:43.595016"], ["id", 1]]
+  [1m[35m (6.3ms)[0m  COMMIT
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 11], ["taggable_type", "Image"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.5ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)  [["taggable_id", 11], ["taggable_type", "Image"]]
+  Rendered images/edit.erb within layouts/application (8.4ms)
+Completed 200 OK in 41ms (Views: 25.5ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/images/11/edit" for ::1 at 2016-08-25 15:15:57 -0400
+Processing by ImagesController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = $1 LIMIT 1[0m  [["id", 11]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4  [["last_request_at", "2016-08-25 19:15:57.135002"], ["perishable_token", "gIVR9YAovZw9ahstEnoN"], ["updated_at", "2016-08-25 19:15:57.135979"], ["id", 1]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActsAsTaggableOn::Tagging Load (0.2ms)[0m  SELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2  [["taggable_id", 11], ["taggable_type", "Image"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 11], ["taggable_type", "Image"]]
+  Rendered images/edit.erb within layouts/application (7.5ms)
+Completed 200 OK in 34ms (Views: 23.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/images/11/edit" for ::1 at 2016-08-25 15:16:16 -0400
+Processing by ImagesController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mImage Load (0.2ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = $1 LIMIT 1  [["id", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (2.0ms)[0m  [1mUPDATE "users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["last_request_at", "2016-08-25 19:16:16.051270"], ["perishable_token", "4BEujE2zvXuH0dJYWaW"], ["updated_at", "2016-08-25 19:16:16.052021"], ["id", 1]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 11], ["taggable_type", "Image"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)  [["taggable_id", 11], ["taggable_type", "Image"]]
+  Rendered images/edit.erb within layouts/application (7.8ms)
+Completed 200 OK in 32ms (Views: 20.9ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/images" for ::1 at 2016-08-25 15:16:21 -0400
+Processing by ImagesController#create as JSON
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x007faad24c4558 @tempfile=#<Tempfile:/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/RackMultipart20160825-39516-66nw4p.jpeg>, @original_filename="image.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"image.jpeg\"\r\nContent-Type: image/jpeg\r\n">}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["last_request_at", "2016-08-25 19:16:21.814481"], ["perishable_token", "K03Gnfq3jCJaJ40FUyHb"], ["updated_at", "2016-08-25 19:16:21.816053"], ["id", 1]]
+  [1m[35m (1.3ms)[0m  COMMIT
+Command :: file -b --mime '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-lbxscp.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-10ndtqg.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-10ndtqg.jpeg[0]'
+Command :: convert '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-10ndtqg.jpeg[0]' -auto-orient -resize "200x200>" '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/03e49008a417dfd28dd76b650127971720160825-39516-1y049pt'
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime '/var/folders/f_/ph4jst2d2tl51tjldl5rgyh80000gn/T/78805a221a988e79ef3f42d7c5bfd41820160825-39516-1twob1h.jpeg'
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "images" ("file_file_name", "file_content_type", "file_file_size", "file_updated_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["file_file_name", "image.jpeg"], ["file_content_type", "image/jpeg"], ["file_file_size", 121212], ["file_updated_at", "2016-08-25 19:16:21.821641"], ["created_at", "2016-08-25 19:16:21.921246"], ["updated_at", "2016-08-25 19:16:21.921246"]]
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 12], ["taggable_type", "Image"]]
+  [1m[35m (6.3ms)[0m  COMMIT
+Completed 200 OK in 126ms (Views: 0.3ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/images/12/edit" for ::1 at 2016-08-25 15:16:21 -0400
+Processing by ImagesController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mImage Load (0.4ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "users"."id" = $4  [["last_request_at", "2016-08-25 19:16:21.961503"], ["perishable_token", "mvWoQk2P4RA4dJyCwyt"], ["updated_at", "2016-08-25 19:16:21.963100"], ["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActsAsTaggableOn::Tagging Load (0.2ms)[0m  SELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2  [["taggable_id", 12], ["taggable_type", "Image"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 12], ["taggable_type", "Image"]]
+  Rendered images/edit.erb within layouts/application (9.4ms)
+Completed 200 OK in 43ms (Views: 29.3ms | ActiveRecord: 2.2ms)

@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require dropzone
  */
 html { 
   -webkit-background-size: cover;
@@ -103,4 +104,8 @@ a img {
 }
 td.related {
   text-align: left;
+}
+form.dropzone {
+  width:200px;
+  margin: 0 auto;
 }

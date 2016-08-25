@@ -5,7 +5,7 @@ class ImagesController < ApplicationController
   before_filter :require_user, :except=>[:show, :index]
   before_filter :require_mgt, :except=>[:show, :index]
   protect_from_forgery :except => [:delete]
-  skip_before_filter :verify_authenticity_token, :only=>[:destroy]
+  skip_before_filter :verify_authenticity_token, :only=>[:destroy, :create]
 
   def add_match
     if match = Image.find_by_id(params[:match_id])
@@ -49,10 +49,10 @@ class ImagesController < ApplicationController
 
   # POST /images
   def create
-    @image = Image.new(image_params)
+    @image = Image.new({:file=>params[:file]})
 
     if @image.save
-      redirect_to edit_image_path(@image), notice: 'Image was successfully created.'
+      render :json=>{:redirect_to=> edit_image_path(@image)}
     else
       render :new
     end
