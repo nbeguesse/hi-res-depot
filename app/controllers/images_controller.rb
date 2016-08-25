@@ -1,9 +1,18 @@
 class ImagesController < ApplicationController
-  before_action :set_image, only: [:show, :edit, :update, :destroy, :toggle_tag, :add_tag]
+  before_action :set_image, only: [:show, :edit, :update, :destroy, :toggle_tag, :add_tag, :add_match]
   before_action :set_bg_image, only: [:index, :new]
   before_action :get_bg_image, except: [:index, :new]
   before_filter :require_user, :except=>[:show, :index]
   before_filter :require_mgt, :except=>[:show, :index]
+  protect_from_forgery :except => [:delete]
+  skip_before_filter :verify_authenticity_token, :only=>[:destroy]
+
+  def add_match
+    if match = Image.find_by_id(params[:match_id])
+      @image.matched_images << match
+    end
+    redirect_to edit_image_path(@image)
+  end
 
   def add_tag
     tag = params[:tag].try(:downcase)

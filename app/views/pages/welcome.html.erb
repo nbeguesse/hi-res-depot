@@ -5,7 +5,7 @@
 <%end%>
 <div><h2 class="light">Season</h2></div>
 <% seasons.each do |tag|%>
-  <h3><%=link_to tag, images_path(:tag=>tag), :class=>"hoverable"%></h3>
+  <h3><%=link_to tag.titlecase, images_path(:tag=>tag), :class=>"hoverable"%></h3>
 <%end%>
 <div><h2 class="light">Media</h2></div>
 <% media.each do |tag|%>

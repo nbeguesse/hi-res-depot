@@ -10,6 +10,16 @@
         </td>
     </tr>
 </table><br/>
+<%if logged_in?%>
+<div>
+    <div class="dark">
+    <%= link_to 'Edit', edit_image_path(@image) %> |
+    <%= link_to 'Delete',  @image,  method: :delete, data: { confirm: 'Are you sure?' } %> | 
+    <%= link_to 'New Image', new_image_path %>
+
+    </div>
+</div>
+<%end%>
 <div>
     <div class="dark">
     <%= link_to 'Home', root_url %>

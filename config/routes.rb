@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     member do
       get 'toggle_tag'
       post 'add_tag'
+      post 'add_match'
     end
    end
 

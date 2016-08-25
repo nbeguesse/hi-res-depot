@@ -5,4 +5,6 @@ class Image < ActiveRecord::Base
       default_url: "/images/:style/missing.png",
       storage: Rails.env.production? ? "s3" : "filesystem"
     validates_attachment_content_type :file, :content_type => /\Aimage\/.*\Z/
+    has_many :matches
+    has_many :matched_images, :through=>:matches, :dependent=>:destroy
 end

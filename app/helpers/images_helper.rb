@@ -5,7 +5,7 @@ module ImagesHelper
   end
 
   def sailors
-    %w(Moon Mercury Mars Jupiter Venus Chibi Pluto Uranus Neptune Saturn)
+    %w(Moon Mercury Mars Jupiter Venus ChibiMoon Pluto Uranus Neptune Saturn)
   end
 
   def girls
