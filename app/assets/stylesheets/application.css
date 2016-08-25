@@ -97,3 +97,10 @@ a img {
   padding:5px;
   display:inline-block;
 }
+.mini {
+  max-width: 50px;
+  max-height:50px;
+}
+td.related {
+  text-align: left;
+}

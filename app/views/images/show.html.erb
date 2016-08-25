@@ -9,6 +9,15 @@
             <%end%>
         </td>
     </tr>
+    <%if @image.matched_images.present?%>
+    <tr>
+        <th>Related:</th>
+        <td class="related"><%@image.matched_images.each do |img|%>
+            <%= link_to image_tag(img.file.url(:thumb), :class=>"mini"), image_path(img) %>
+            <%end%>
+        </td>
+    </tr>
+    <%end%>
 </table><br/>
 <%if logged_in?%>
 <div>
