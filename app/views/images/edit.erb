@@ -82,24 +82,36 @@
         <td>          
           <%=form_tag add_tag_image_path(@image)%>
             <input type="text" name="tag">
-            <input type="submit">
+            <input type="submit" value="Add Tag">
           </form>
         </td>
       </tr>
       <tr>
         <th>
-          Related #
+          Add Related #
         </th>
-        <td>          
-          <%=form_tag add_match_image_path(@image)%>
+        <td>         
+          <%=form_tag toggle_match_image_path(@image)%>
             <input type="text" name="match_id" size="3">
           </form>
         </td>
       </tr>
+      <%if @image.matched_images.any?%>
+      <tr>
+        <th>
+          Related
+        </th>
+        <td>    
+          <%@image.matched_images.each do |img|%>
+            <%=form_tag toggle_match_image_path(@image)%>
+              <input type="hidden" name="match_id" value="<%=img.id%>">
+              <button><%=image_tag img.file.url(:thumb), :class=>"mini"%> X</button>
+            </form>
+          <%end%>      
+        </td>
+      </tr>
+      <%end%>
     </table>
 </div>
 <h3>Add Another Image</h3>
 <form action="/images" class="dropzone" method="post" id="my-awesome-dropzone"></form>
-<div class="dark">
-<%= link_to 'Home', root_url %>
-</div>

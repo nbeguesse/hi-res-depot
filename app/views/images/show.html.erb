@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
-<%= link_to image_tag(@image.file.url(:thumb)), @image.file.url %><br/>
-<div class="black">(Click to View Big)</div><br/>
+
 <table class="tag-cloud dark">
     <tr>
         <th>View More:</th>
@@ -18,6 +16,9 @@
         </td>
     </tr>
     <%end%>
+    <tr>
+        <td colspan=2><%=link_to "Top", root_url%></td>
+    </tr>
 </table><br/>
 <%if logged_in?%>
 <div>
@@ -29,8 +30,4 @@
     </div>
 </div>
 <%end%>
-<div>
-    <div class="dark">
-    <%= link_to 'Home', root_url %>
-    </div>
-</div>
+<%=image_tag @image.file.url, :class=>"widest"%>

@@ -16,7 +16,7 @@
 //= require dropzone
 
 $(document).ready(function() {
-    console.log('ready')
+    //Tag clouds links toggle tags
     $(".edit-image .tag-cloud a").click(function(e){
         e.stopPropagation();
         $.get($(this).attr("href"), function (data) {
@@ -26,7 +26,8 @@ $(document).ready(function() {
         return false;
     });
 
-
+    //Drag-n-drop for creating images
+    //my-awesome-dropzone is the div ID
     Dropzone.options.myAwesomeDropzone = {
       init: function() {
         this.on("success", function(file, response) { 
@@ -34,4 +35,9 @@ $(document).ready(function() {
          });
       }
     };    
+
+    $("select#add-filter").change(function(e){
+      var val = $(this).val();
+      top.location.href = top.location.href+"&tag[]="+val;
+    });
 });

@@ -1,6 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%=@tag.titlecase%> Images</h1>
+<h1><%=@tag.join(" ").titlecase%> Images</h1>
+
+  <div class="dark">
+      <select id="add-filter">
+        <option>Add a filter</option>
+        <%ActsAsTaggableOn::Tag.pluck('name').sort.each do |tag|%>
+          <%next if @tag.downcase.include?(tag.downcase)%>
+          <option><%=tag.titlecase%></option>
+        <%end%>
+      </select>
+  </div>
+  <%if @tag.length > 1%>
+  <div>
+    <div class="dark tag-cloud">
+      <span class="white">Remove:</span>
+      <%@tag.each do |tag|%>
+        <%tmp = @tag.dup.reject{|i|i==tag}%>
+        <%=link_to tag.titlecase, images_path(:tag=>tmp)%>
+      <%end%>
+    </div>
+  </div>
+  <%end%>
 
   <div class="gallery">
     <% @images.each do |image| %>

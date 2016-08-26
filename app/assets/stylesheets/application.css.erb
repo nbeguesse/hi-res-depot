@@ -15,20 +15,64 @@
  *= require dropzone
  */
 html { 
+  background:url('<%=asset_path "neptune.jpg"%>') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
+html.pink {
+  background-image:url('<%=asset_path "pink.jpg"%>');
+}
+html.red {
+  background-image:url('<%=asset_path "red.jpg"%>');
+}
+html.green {
+  background-image:url('<%=asset_path "green.jpg"%>');
+}
+html.yellow {
+  background-image:url('<%=asset_path "yellow.jpg"%>');
+}
+html.blue {
+  background-image:url('<%=asset_path "blue.jpg"%>');
+}
+html.neptune {
+  background-image:url('<%=asset_path "neptune.jpg"%>');
+}
+html.moon {
+  background-image:url('<%=asset_path "moon.jpg"%>');
+}
+html.moon2 {
+  background-image:url('<%=asset_path "moon2.jpg"%>');
+}
+html.mercury {
+  background-image:url('<%=asset_path "mercury.jpg"%>');
+}
+html.tux {
+  background-image:url('<%=asset_path "tux.jpg"%>');
+}
+html.mars {
+  background-image:url('<%=asset_path "mars.jpg"%>');
+}
+html.saturn {
+  background-image:url('<%=asset_path "saturn.jpg"%>');
+}
+html.uranus {
+  background-image:url('<%=asset_path "uranus.jpg"%>');
+}
 body {
   background-color:transparent;
   text-align: center;
   padding-bottom:20px;
+  color:#ddd;
 }
 h1 {
   color: white;
   text-shadow: 0 0 10px black;
 
+}
+input, select, .dropzone, button {
+  color:black;
 }
 table {
   margin: 0 auto;
@@ -67,7 +111,7 @@ a:hover {  }
   border-bottom: 0;
 }
 .dark {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.3);
   border-radius:5px;
   padding:5px;
   display:inline-block;
@@ -89,23 +133,40 @@ a img {
   color:black;
   text-shadow: 0 0 2px white;
 }
+.white {
+  color:white;
+  text-shadow: 0 0 2px black;
+}
 .form-holder {
   text-align: center;
   max-width:500px;
   margin: 0 auto;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.3);
   border-radius:5px;
   padding:5px;
   display:inline-block;
 }
-.mini {
+.mini, a.mini img {
   max-width: 50px;
   max-height:50px;
+}
+.edit-image button {
+  float:left;
+}
+
+.edit-image .mini:hover {
+  opacity: 0.5;
+  background-color:red;
 }
 td.related {
   text-align: left;
 }
+
 form.dropzone {
   width:200px;
   margin: 0 auto;
+}
+img.widest {
+  min-width:90%;
+  margin: 20px 0
 }

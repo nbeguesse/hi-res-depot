@@ -1,15 +1,18 @@
 class ImagesController < ApplicationController
-  before_action :set_image, only: [:show, :edit, :update, :destroy, :toggle_tag, :add_tag, :add_match]
-  before_action :set_bg_image, only: [:index, :new]
-  before_action :get_bg_image, except: [:index, :new]
+  before_action :set_image, only: [:show, :edit, :update, :destroy, :toggle_tag, :add_tag, :toggle_match]
   before_filter :require_user, :except=>[:show, :index]
   before_filter :require_mgt, :except=>[:show, :index]
+  before_filter :choose_bg, :only=>[:index]
   protect_from_forgery :except => [:delete]
   skip_before_filter :verify_authenticity_token, :only=>[:destroy, :create]
 
-  def add_match
+  def toggle_match
     if match = Image.find_by_id(params[:match_id])
-      @image.matched_images << match
+      if @image.matched_images.include?(match)
+        @image.matched_images.delete(match)
+      else
+        @image.matched_images << match
+      end
     end
     redirect_to edit_image_path(@image)
   end
@@ -25,12 +28,13 @@ class ImagesController < ApplicationController
   
   # GET /images
   def index
-    @tag = params[:tag]
     if @tag.present?
       @images = Image.tagged_with(@tag)
     else
-      redirect_to root_url and return
+      @tag = []
+      @images = Image.all
     end
+    @images = @images.to_a.shuffle
   end
 
   # GET /images/1
@@ -97,10 +101,28 @@ class ImagesController < ApplicationController
       params.require(:image).permit(:file, :tag_list)
     end
 
-    def set_bg_image
+    def choose_bg
+      @tag = params[:tag]
+      @tag = [@tag] if @tag.is_a?(String)
+      set_bg("moon")
+      set_bg("saturn") if tags_in ["saturn","hotaru","pluto","setsuna"]
+      set_bg("uranus") if  tags_in ["haruka","uranus"]
+      set_bg("neptune") if tags_in ["michiru","neptune"]
+      set_bg("tux") if tags_in ["tux"]
+      set_bg("pink") if tags_in ["chibiusa","chibimoon"]
+      set_bg("red") if tags_in ["mars","rei"]
+      set_bg("yellow") if tags_in ["venus","minako"]
+      set_bg("blue") if tags_in ["mercury","ami"]
+      set_bg("green") if tags_in ["jupiter","makoto"]
+      set_bg("moon2") if tags_in ["moon","usagi","super sailor moon"]
     end
 
-    def get_bg_image
+    def tags_in arr
+      return false unless @tag
+      arr.each do |a|
+        return true if @tag.downcase.include?(a)
+      end
+      false
     end
 
     def require_mgt

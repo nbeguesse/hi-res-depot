@@ -17,7 +17,7 @@ module ImagesHelper
   end
 
   def media
-    ["90s anime","Manga","Bookmark","Laser Disc","CD","Calendar"]
+    ["90s anime","Manga","Bookmark","Laser Disc","CD","Calendar","Trading Card"]
   end
 
   def all_tags
@@ -29,7 +29,7 @@ module ImagesHelper
   end
 
   def other_heroes
-    ["Tux","Luna","Artemis"]
+    ["Tux","Luna","Artemis","Villains"]
   end
 
   def base_tags_for_edit

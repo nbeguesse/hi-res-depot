@@ -1,21 +1,18 @@
 <h1>Hi-Res Depot</h1>
-<div><h2 class="light">Character</h2></div>
+To get started, just click a category.
+<div><h2 class="dark">Character</h2></div>
 <% sailors.each do |tag|%>
-  <h3><%=link_to tag.titlecase, images_path(:tag=>tag), :class=>"hoverable"%></h3>
+  <h3><%=link_to tag.titlecase+" Images", images_path(:tag=>[tag]), :class=>"hoverable"%></h3>
 <%end%>
-<div><h2 class="light">Season</h2></div>
-<% seasons.each do |tag|%>
-  <h3><%=link_to tag.titlecase, images_path(:tag=>tag), :class=>"hoverable"%></h3>
-<%end%>
-<div><h2 class="light">Media</h2></div>
+<div><h2 class="dark">Media</h2></div>
 <% media.each do |tag|%>
-  <h3><%=link_to tag.titlecase, images_path(:tag=>tag), :class=>"hoverable"%></h3>
+  <h3><%=link_to tag.titlecase, images_path(:tag=>[tag]), :class=>"hoverable"%></h3>
 <%end%>
-<div><h2 class="light">Tags</h2></div>
+<div><h2 class="dark">Tags</h2></div>
 <div class="dark tag-cloud">
     <%all_tags.each do |tag|%>
       <%next if base_tags_for_index.downcase.include?(tag.to_s.downcase)%>
-      <%=link_to tag, images_path(:tag=>tag.to_s)%>
+      <%=link_to tag, images_path(:tag=>[tag.to_s])%>
     <%end%>
 </div>
 

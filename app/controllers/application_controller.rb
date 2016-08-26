@@ -6,7 +6,13 @@ class ApplicationController < ActionController::Base
   include Authentication
 
   helper_method :secure?
+
   def secure?
     Rails.env.production?
+  end
+
+  def set_bg bg
+    Rails.logger.info "in set bg"
+    session[:bg] = bg
   end
 end
