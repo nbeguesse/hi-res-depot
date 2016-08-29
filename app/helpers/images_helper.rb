@@ -21,23 +21,23 @@ module ImagesHelper
   end
 
   def all_tags
-    ActsAsTaggableOn::Tag.most_used(50)
+    ActsAsTaggableOn::Tag.most_used(100)
   end
 
   def num_girls
-    ["Alone"]+(2..10).map{|i| pluralize(i, "Girl")}
+    ["Alone"]+(1..10).map{|i| pluralize(i, "Girl")}
   end
 
   def other_heroes
-    ["Tux","Luna","Artemis","Villains"]
+    ["Tux","Luna","Artemis","Villains","Super Sailor Moon","Eternal Sailor Moon","Prism","opening","attack","henshin"]
   end
 
   def base_tags_for_edit
-    (sailors+girls+seasons+media+other_heroes+num_girls)
+    (sailors+girls+seasons+media+other_heroes)
   end
 
   def base_tags_for_index
-    (sailors+seasons+media)
+    (sailors)
   end
 
 end

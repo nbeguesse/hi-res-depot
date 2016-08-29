@@ -87,7 +87,7 @@ class ImagesController < ApplicationController
   # DELETE /images/1
   def destroy
     @image.destroy
-    redirect_to images_url, notice: 'Image was successfully destroyed.'
+    redirect_to root_url, notice: 'Image was successfully destroyed.'
   end
 
   private
