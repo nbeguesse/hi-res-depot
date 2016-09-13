@@ -11,6 +11,20 @@ class Image < ActiveRecord::Base
     GIRLS =  ["Usagi", "Ami", "Rei", "Makoto", "Minako", "ChibiUsa", "Setsuna", "Hotaru", "Haruka", "Michiru"]
     before_save :calculate_num_girls
 
+    def self.save_old_file_paths
+      Image.all.each do |image|
+        image.update_attribute(:old_file_path,image.file.path)
+      end
+    end
+
+    def move
+      # (self.file.styles.keys+[:original]).each do |style|
+      #   AWS::S3::S3Object.move_to self.file.path(style), new_file_path, self.file.bucket_name
+      # end
+
+      # self.update_attribute(:image_file_name, new_file_name)
+    end
+
     def calculate_num_girls
       girls = []
       self.tag_list.each do |tag|

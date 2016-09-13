@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160825161505) do
+ActiveRecord::Schema.define(version: 20160913155428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20160825161505) do
     t.datetime "file_updated_at"
     t.integer  "file_original_width"
     t.integer  "file_original_height"
+    t.string   "old_file_path"
   end
 
   create_table "matches", force: :cascade do |t|
