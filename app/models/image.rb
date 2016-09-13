@@ -18,11 +18,19 @@ class Image < ActiveRecord::Base
     end
 
     def move
-      # (self.file.styles.keys+[:original]).each do |style|
-      #   AWS::S3::S3Object.move_to self.file.path(style), new_file_path, self.file.bucket_name
-      # end
+      (self.file.styles.keys+[:original]).each do |style|
+        old = old_file_path.gsub("original",style.to_s)
+        if Rails.env.development?
+          if File.exists?(old)
+            FileUtils.move(old, self.file.path(style)) 
+          end
+        else
+        
+          AWS::S3::S3Object.move_to old, self.file.path(style), self.file.bucket_name
+        end
 
-      # self.update_attribute(:image_file_name, new_file_name)
+        self.update_attribute(:file_file_name, "#{style}#{File.extname(old_file_path)}")
+      end
     end
 
     def calculate_num_girls
