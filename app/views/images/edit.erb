@@ -60,6 +60,7 @@
         <td>          
           <%@tags.each do |tag|%>
             <%next if base_tags_for_edit.downcase.include?(tag.downcase)%>
+            <%next if tag.include?("+")%>
             <%=toggle_tag tag.titlecase%>
           <%end%>
         </td>

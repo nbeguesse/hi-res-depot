@@ -1,0 +1,20 @@
+---
+- id: 1
+  name: CM
+  email: nicole@highlinesale.com
+  role_name: admin
+  crypted_password: "$2a$10$e1KaiOHK5RuIS2ZPa8RCDeNjAtScKMSr71R19N/Z9bR2VjfR21P7W"
+  password_salt: rXXSllnCTNSlWdXgHvb
+  persistence_token: 11a7c1a4084ef52287febe3f849dc6e96a3e4320a47806daf47045d289d1a04c98e59c62b167cb39c9cfb55165fbf1f2fb7b4d6731ca336b0f568e176aaf1010
+  single_access_token: aC7TOo3G7Iflo3WmFA
+  perishable_token: XDNAV4Aj84thbOj8gzq
+  login_count: 3
+  failed_login_count: 0
+  last_request_at: 2016-08-26 21:07:57.718375000 Z
+  current_login_at: 2016-08-26 21:06:59.035099000 Z
+  last_login_at: 2016-08-26 21:06:32.075647000 Z
+  current_login_ip: "::1"
+  last_login_ip: "::1"
+  created_at: 2016-08-26 21:06:32.001587000 Z
+  updated_at: 2016-08-26 21:07:57.718933000 Z
+  blocked: false

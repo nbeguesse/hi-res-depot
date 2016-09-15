@@ -1,13 +1,21 @@
-<h1>Hi-Res Depot</h1>
+<h1>Hi-Res Depot</h1> Your home for big, beautiful, hi-resolution Sailor Moon images and scans.<br/>
 To get started, just click a category.
 <div><h2 class="dark">Character</h2></div>
-<% sailors.each do |tag|%>
-  <h3><%=link_to tag.titlecase+" Images", images_path(:tag=>[tag]), :class=>"hoverable"%></h3>
-<%end%>
+  <h3><a class="hoverable" href="/images?tag%5B%5D=moon%2Busagi">Moon Images</a></h3>
+  <h3><a class="hoverable" href="/images?tag%5B%5D=mercury%2Bami">Mercury Images</a></h3>
+  <h3><a class="hoverable" href="/images?tag%5B%5D=mars%2Brei">Mars Images</a></h3>
+  <h3><a class="hoverable" href="/images?tag%5B%5D=jupiter%2Bmakoto">Jupiter Images</a></h3>
+  <h3><a class="hoverable" href="/images?tag%5B%5D=venus%2Bminako">Venus Images</a></h3>
+  <h3><a class="hoverable" href="/images?tag%5B%5D=chibimoon%2Bchibiusa">Chibi Moon Images</a></h3>
+  <h3><a class="hoverable" href="/images?tag%5B%5D=pluto%2Bsetsuna">Pluto Images</a></h3>
+  <h3><a class="hoverable" href="/images?tag%5B%5D=uranus%2Bharuka">Uranus Images</a></h3>
+  <h3><a class="hoverable" href="/images?tag%5B%5D=neptune%2Bmichiru">Neptune Images</a></h3>
+  <h3><a class="hoverable" href="/images?tag%5B%5D=saturn%2Bhotaru">Saturn Images</a></h3>
 <div><h2 class="dark">Tags</h2></div>
 <div class="dark tag-cloud">
     <%all_tags.each do |tag|%>
       <%next if base_tags_for_index.downcase.include?(tag.to_s.downcase)%>
+      <%next if tag.to_s.include?("+")%>
       <%=link_to tag, images_path(:tag=>[tag.to_s])%>
     <%end%>
 </div>

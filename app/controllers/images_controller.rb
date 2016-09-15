@@ -31,8 +31,8 @@ class ImagesController < ApplicationController
     if @tag.present?
       @images = Image.tagged_with(@tag)
     else
-      @tag = []
-      @images = Image.all
+      #i.e. can't view all images
+      redirect_to root_url and return
     end
     @images = @images.to_a.shuffle
   end
@@ -105,16 +105,16 @@ class ImagesController < ApplicationController
       @tag = params[:tag]
       @tag = [@tag] if @tag.is_a?(String)
       set_bg("moon")
-      set_bg("saturn") if tags_in ["saturn","hotaru","pluto","setsuna"]
-      set_bg("uranus") if  tags_in ["haruka","uranus"]
-      set_bg("neptune") if tags_in ["michiru","neptune"]
+      set_bg("saturn") if tags_in ["saturn","hotaru","pluto","setsuna","pluto+setsuna","saturn+hotaru"]
+      set_bg("uranus") if  tags_in ["haruka","uranus","uranus+haruka"]
+      set_bg("neptune") if tags_in ["michiru","neptune","neptune+michiru"]
       set_bg("tux") if tags_in ["tux"]
-      set_bg("pink") if tags_in ["chibiusa","chibimoon"]
-      set_bg("red") if tags_in ["mars","rei"]
-      set_bg("yellow") if tags_in ["venus","minako"]
-      set_bg("blue") if tags_in ["mercury","ami"]
-      set_bg("green") if tags_in ["jupiter","makoto"]
-      set_bg("moon2") if tags_in ["moon","usagi","super sailor moon"]
+      set_bg("pink") if tags_in ["chibiusa","chibimoon","chibimoon+chibiusa"]
+      set_bg("red") if tags_in ["mars","rei","mars+rei"]
+      set_bg("yellow") if tags_in ["venus","minako","venus+minako"]
+      set_bg("blue") if tags_in ["mercury","ami","mercury+ami"]
+      set_bg("green") if tags_in ["jupiter","makoto","jupiter+makoto"]
+      set_bg("moon2") if tags_in ["moon","usagi","super sailor moon","moon+usagi"]
     end
 
     def tags_in arr

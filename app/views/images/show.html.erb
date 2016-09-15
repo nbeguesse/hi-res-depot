@@ -3,6 +3,7 @@
     <tr>
         <th>View More:</th>
         <td><%@image.tag_list.each do |tag|%>
+            <%next if tag.include?("+")%>
             <%=link_to tag.titlecase, images_path(:tag=>tag)%>
             <%end%>
         </td>
